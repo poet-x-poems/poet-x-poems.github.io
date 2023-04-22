@@ -1,5 +1,20 @@
-h1 {
+:root {
 
-    color: red;
+    --black_1: #222222;
+    --white_1: #dddddd;
+
+}
+
+* {
+
+    color: var(--white_1);
+
+    text-align: center;
+
+}
+
+body {
+
+    background-color: var(--black_1);
 
 }
