@@ -1,10 +1,9 @@
 const POEMS = 10;
-const BUTTON_COLOR_1 = "#d4d4d4";
-const BUTTON_COLOR_2 = "#424242";
+const BUTTON_COLOR_1 = "#e8e8e8";
+const BUTTON_COLOR_2 = "#b2b2b2";
 
-const buttons = document.getElementsByTagName("button");
+const buttons = [document.getElementById("b_1"), document.getElementById("b_2")];
 
-// zf 11
 const titles = [
     "Home (Haiku 1)",
     "Alarm (Haiku 2)",
@@ -18,7 +17,6 @@ const titles = [
     "Silence (Found Poem)"
 ];
 
-// zf 118
 const texts = [
     `
 This is where I live
@@ -70,28 +68,28 @@ and ideas long locked in,
    I do not know when I will open them again.
     `,
     `
-                    The
-                  sound of
-                 the leaves
-               rustling as the
-            breeze passes by. The
-         bright, vivid colors which
-     will soon turn brown and fall. The
-             leaves are starting
-             to wither as summer
-         is coming to an end. I look
-       at the tree again, only to see
-   myself in the past. The calming green
+The
+sound of
+the leaves
+rustling as the
+breeze passes by. The
+bright, vivid colors which
+will soon turn brown and fall. The
+leaves are starting
+to wither as summer
+is coming to an end. I look
+at the tree again, only to see
+myself in the past. The calming green
 leaves are becoming scarce. As I think back
-                 to when the
-                 leaves were
-               still green, I
-                 take myself
-                   back to
-              elementary school,
-                middle school.
-                 Now I am in
-                 high school.
+to when the
+leaves were
+still green, I
+take myself
+back to
+elementary school,
+middle school.
+Now I am in
+high school.
     `,
     `
 I’m sorry for taking
@@ -163,10 +161,13 @@ let index = 0;
 
 function display() {
 
+    buttons[0].classList.add("hoverable");
+    buttons[1].classList.add("hoverable");
+
     title.innerText = poems[index].title;
     text.innerText = poems[index].text;
 
-    if (index < 6) {
+    if (index < 6 || index == 7) {
         text.style.textAlign = "center";
     } else {
         text.style.textAlign = "left";
@@ -177,8 +178,10 @@ function display() {
 
     if (index == 0) {
         buttons[0].style.color = BUTTON_COLOR_2;
+        buttons[0].classList.remove("hoverable");
     } else if (index == POEMS - 1) {
         buttons[1].style.color = BUTTON_COLOR_2;
+        buttons[1].classList.remove("hoverable");
     }
 
 }

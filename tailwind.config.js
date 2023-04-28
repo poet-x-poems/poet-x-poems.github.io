@@ -5,9 +5,8 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'bg_1': '#222222',
-                'bg_2': '#323232',
-                'text': '#d4d4d4'
+                'dark': '#323232',
+                'light': '#d4d4d4'
             }
         }
     }

@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hoverable:hover {
+
+    background-color: #2563eb;
+
+}
