@@ -1,4 +1,8 @@
 const POEMS = 10;
+const BUTTON_COLOR_1 = "#d4d4d4";
+const BUTTON_COLOR_2 = "#424242";
+
+const buttons = document.getElementsByTagName("button");
 
 // zf 11
 const titles = [
@@ -166,6 +170,15 @@ function display() {
         text.style.textAlign = "center";
     } else {
         text.style.textAlign = "left";
+    }
+
+    buttons[0].style.color = BUTTON_COLOR_1;
+    buttons[1].style.color = BUTTON_COLOR_1;
+
+    if (index == 0) {
+        buttons[0].style.color = BUTTON_COLOR_2;
+    } else if (index == POEMS - 1) {
+        buttons[1].style.color = BUTTON_COLOR_2;
     }
 
 }
